@@ -7,26 +7,31 @@ export const styles = StyleSheet.create({
     backgroundColor: '#2196F3',
     paddingTop: 40,
     paddingBottom: 15,
-    elevation: 5,
-    flexWrap: 'wrap'
+    elevation: 5
   },
 
   navItem: {
     color: 'white',
     fontSize: 14,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    paddingHorizontal: 5,
+    paddingBottom: 5
   },
 
   activo: {
     borderBottomWidth: 3,
     borderColor: 'white',
-    paddingBottom: 5
+    color: '#FFD700'
   },
 
   item: {
     fontSize: 18,
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: '#ccc'
+    padding: 15,
+    marginHorizontal: 10,
+    marginVertical: 5,
+    borderRadius: 8,
+    backgroundColor: '#fff',
+    elevation: 2,
+    borderBottomWidth: 0
   }
 });

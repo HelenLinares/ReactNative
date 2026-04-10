@@ -1,26 +1,20 @@
 import { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { styles } from './styles';
+import { obtenerPaises } from './api/paises';
 
 export default function App() {
   const [pantalla, setPantalla] = useState("todos");
   const [paises, setPaises] = useState([]);
 
-  // API
+  
   useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all?fields=name,region,cca3')
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) {
-          setPaises(data);
-        } else {
-          setPaises([]);
-        }
-      })
-      .catch(error => {
-        console.log(error);
-        setPaises([]);
-      });
+    const cargarDatos = async () => {
+      const data = await obtenerPaises();
+      setPaises(data);
+    };
+
+    cargarDatos();
   }, []);
 
   // FILTROS
@@ -67,7 +61,7 @@ export default function App() {
 
       </View>
 
-      {/*LISTA */}
+      {/* LISTA */}
       <FlatList
         style={{ flex: 1 }}
         data={
