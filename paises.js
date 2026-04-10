@@ -1,4 +1,6 @@
-export const obtenerPaises = async () => {
+export default function Paises () {
+
+const obtenerPaises = async () => {
   try {
     const response = await fetch(
   "https://restcountries.com/v3.1/all?fields=name,capital,currencies,region,cca3"
@@ -17,3 +19,4 @@ export const obtenerPaises = async () => {
     return [];
   }
 };
+}

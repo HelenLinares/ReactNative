@@ -24,7 +24,7 @@ export default function BuscadorIdioma({ paises }) {
         <Text style={styles.conteo}>{resultados.length} país(es) encontrado(s)</Text>
       )}
       <FlatList
-        data={busqueda.length > 0 ? resultados : []}
+        data={busqueda.length > 0 ? resultados : paises}
         keyExtractor={(item, index) => item.cca3 || index.toString()}
         renderItem={({ item }) => (
           <View style={styles.card}>
